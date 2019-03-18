@@ -11,7 +11,7 @@ class Application
       if @@items.find do |i|
          i.name == item 
       end 
-      resp.write i.price 
+      resp.write item.price 
     else 
       resp.status = 400
       resp.write "Item not found"

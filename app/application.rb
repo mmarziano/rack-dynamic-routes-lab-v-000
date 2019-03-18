@@ -15,11 +15,10 @@ class Application
       resp.status = 400
       resp.write "Item not found"
     end 
-   end 
   else 
       resp.status = 400
       resp.write "Route not found"
   end 
-
+end
   #resp.finish
 end 

@@ -13,8 +13,8 @@ class Application
       resp.write i.price 
     end 
   else 
-    resp.write "Route not found"
-    resp.status = 404
+    resp.status = 400
+    resp.write "Item not found"
     #binding.pry
   else req.path.include?("/items")
       

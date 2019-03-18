@@ -11,20 +11,15 @@ class Application
     if @@items.find do |i|
       i.name == item 
       resp.write i.price 
+    else 
+      resp.status = 400
+      resp.write "Item not found"
     end 
+    
   else 
-    resp.status = 400
-    resp.write "Item not found"
-    #binding.pry
-  else req.path.include?("/items")
-      
-      if @@items.find do |i| 
-        i.name == param
-        resp.write i.price
-        end 
-      end
-        end 
-    end
+      resp.status = 400
+      resp.write "Route not found"
+  end 
 
   #resp.finish
 end 
